@@ -1,20 +1,20 @@
-<p align="center"><a href="https://github.com/crazy-max/docker-rtorrent-rutorrent" target="_blank"><img height="128" src="https://raw.githubusercontent.com/crazy-max/docker-rtorrent-rutorrent/master/.github/docker-rtorrent-rutorrent.jpg"></a></p>
+<p align="center"><a href="https://github.com/de-fonz/docker-rtorrent-rutorrent-autodl-irssi" target="_blank"><img height="128" src="https://raw.githubusercontent.com/de-fonz/docker-rtorrent-rutorrent/master-autodl-irssi/.github/docker-rtorrent-rutorrent.jpg"></a></p>
 
 <p align="center">
   <a href="https://hub.docker.com/r/crazymax/rtorrent-rutorrent/tags?page=1&ordering=last_updated"><img src="https://img.shields.io/github/v/tag/crazy-max/docker-rtorrent-rutorrent?label=version&style=flat-square" alt="Latest Version"></a>
-  <a href="https://github.com/crazy-max/docker-rtorrent-rutorrent/actions?workflow=build"><img src="https://img.shields.io/github/workflow/status/crazy-max/docker-rtorrent-rutorrent/build?label=build&logo=github&style=flat-square" alt="Build Status"></a>
+  <a href="https://github.com/de-fonz/docker-rtorrent-rutorrent-autodl-irssi/actions?workflow=build"><img src="https://img.shields.io/github/workflow/status/de-fonz/docker-rtorrent-rutorrent-autodl-irssi/build?label=build&logo=github&style=flat-square" alt="Build Status"></a>
   <a href="https://hub.docker.com/r/crazymax/rtorrent-rutorrent/"><img src="https://img.shields.io/docker/stars/crazymax/rtorrent-rutorrent.svg?style=flat-square&logo=docker" alt="Docker Stars"></a>
   <a href="https://hub.docker.com/r/crazymax/rtorrent-rutorrent/"><img src="https://img.shields.io/docker/pulls/crazymax/rtorrent-rutorrent.svg?style=flat-square&logo=docker" alt="Docker Pulls"></a>
-  <br /><a href="https://github.com/sponsors/crazy-max"><img src="https://img.shields.io/badge/sponsor-crazy--max-181717.svg?logo=github&style=flat-square" alt="Become a sponsor"></a>
-  <a href="https://www.paypal.me/crazyws"><img src="https://img.shields.io/badge/donate-paypal-00457c.svg?logo=paypal&style=flat-square" alt="Donate Paypal"></a>
-</p>
 
 ## About
 
 [rTorrent](https://github.com/rakshasa/rtorrent) and [ruTorrent](https://github.com/Novik/ruTorrent) Docker image based on Alpine Linux.<br />
-If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other Docker images!
-
-💡 Want to be notified of new releases? Check out 🔔 [Diun (Docker Image Update Notifier)](https://github.com/crazy-max/diun) project!
+Based on the great work done by crazy-max!
+This image is still work in progress. I have managed to get a working container based on the rtorrent-rutorrent container from crazy-max, irssi and the autodl plugin. Steps to do:
+1. get all the changes from the local environment to github
+2. get the docker container onto docker hub
+3. further improve the setup
+4. updates to the readme file
 
 ___
 
@@ -40,7 +40,6 @@ ___
   * [Increase Docker timeout to allow rTorrent to shutdown gracefully](#increase-docker-timeout-to-allow-rtorrent-to-shutdown-gracefully)
   * [WAN IP address](#wan-ip-address)
 * [Upgrade](#upgrade)
-* [Contributing](#contributing)
 * [License](#license)
 
 ## Features
@@ -63,8 +62,8 @@ ___
 ## Build locally
 
 ```shell
-git clone https://github.com/crazy-max/docker-rtorrent-rutorrent.git
-cd docker-rtorrent-rutorrent
+git clone https://github.com/de-fonz/docker-rtorrent-rutorrent-autodl-irrsi.git
+cd docker-rtorrent-rutorrent-autodl-irssi
 
 # Build image and output to docker (default)
 docker buildx bake
@@ -152,7 +151,7 @@ Image: crazymax/rtorrent-rutorrent:latest
 
 ## Volumes
 
-* `/data`: rTorrent / ruTorrent config, session files, log, ...
+* `/data`: rTorrent / ruTorrent config, session files, log, ... / autodl config
 * `/downloads`: Downloaded files
 * `/passwd`: Contains htpasswd files for basic auth
 
@@ -333,14 +332,6 @@ To upgrade, pull the newer image and launch the container:
 docker-compose pull
 docker-compose up -d
 ```
-
-## Contributing
-
-Want to contribute? Awesome! The most basic way to show your support is to star the project, or to raise issues. You
-can also support this project by [**becoming a sponsor on GitHub**](https://github.com/sponsors/crazy-max) or by making
-a [Paypal donation](https://www.paypal.me/crazyws) to ensure this journey continues indefinitely!
-
-Thanks again for your support, it is much appreciated! :pray:
 
 ## License
 
