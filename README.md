@@ -1,10 +1,10 @@
 <p align="center"><a href="https://github.com/de-fonz/docker-rtorrent-rutorrent-autodl-irssi" target="_blank"><img height="128" src="https://raw.githubusercontent.com/de-fonz/docker-rtorrent-rutorrent/master-autodl-irssi/.github/docker-rtorrent-rutorrent.jpg"></a></p>
 
 <p align="center">
-  <a href="https://hub.docker.com/r/crazymax/rtorrent-rutorrent/tags?page=1&ordering=last_updated"><img src="https://img.shields.io/github/v/tag/crazy-max/docker-rtorrent-rutorrent?label=version&style=flat-square" alt="Latest Version"></a>
+  <a href="https://hub.docker.com/r/de-fonz/rtorrent-rutorrent-autodl-irssi/tags?page=1&ordering=last_updated"><img src="https://img.shields.io/github/v/tag/de-fonz/docker-rtorrent-rutorrent-autodl-irssi?label=version&style=flat-square" alt="Latest Version"></a>
   <a href="https://github.com/de-fonz/docker-rtorrent-rutorrent-autodl-irssi/actions?workflow=build"><img src="https://img.shields.io/github/workflow/status/de-fonz/docker-rtorrent-rutorrent-autodl-irssi/build?label=build&logo=github&style=flat-square" alt="Build Status"></a>
-  <a href="https://hub.docker.com/r/crazymax/rtorrent-rutorrent/"><img src="https://img.shields.io/docker/stars/crazymax/rtorrent-rutorrent.svg?style=flat-square&logo=docker" alt="Docker Stars"></a>
-  <a href="https://hub.docker.com/r/crazymax/rtorrent-rutorrent/"><img src="https://img.shields.io/docker/pulls/crazymax/rtorrent-rutorrent.svg?style=flat-square&logo=docker" alt="Docker Pulls"></a>
+  <a href="https://hub.docker.com/r/defonz/rtorrent-rutorrent-autodl-irssi/"><img src="https://img.shields.io/docker/stars/defonz/rtorrent-rutorrent-autodl-irssi.svg?style=flat-square&logo=docker" alt="Docker Stars"></a>
+  <a href="https://hub.docker.com/r/defonz/rtorrent-rutorrent-autodl-irssi/"><img src="https://img.shields.io/docker/pulls/defonz/rtorrent-rutorrent-autodl-irssi.svg?style=flat-square&logo=docker" alt="Docker Pulls"></a>
 
 ## About
 
