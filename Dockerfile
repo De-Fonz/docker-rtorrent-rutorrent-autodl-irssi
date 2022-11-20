@@ -273,14 +273,20 @@ RUN apk --update --no-cache add \
     dhclient \
     ffmpeg \
     findutils \
+    gcc \
     geoip \
     grep \
     gzip \
     libstdc++ \
+    make \
     mediainfo \
+    musl-dev \
     ncurses \
     openssl \
     pcre \
+    perl-app-cpanminus \
+    perl-net-ssleay \
+    perl-dev \
     php7 \
     php7-bcmath \
     php7-cli \
@@ -305,6 +311,7 @@ RUN apk --update --no-cache add \
     tzdata \
     unzip \
     util-linux \
+    wget \
     zip \
     zlib \
   && ln -s /usr/lib/nginx/modules /etc/nginx/modules \
@@ -316,6 +323,46 @@ RUN apk --update --no-cache add \
   && adduser -D -H -u ${PUID} -G rtorrent -s /bin/sh rtorrent \
   && curl --version \
   && rm -rf /tmp/*
+
+RUN cpanm -v Archive::Zip HTML::Entities XML::LibXML Digest::SHA JSON JSON::XS
+
+RUN apk --update --no-cache add irssi-perl screen sudo
+
+RUN chmod 777 home
+
+USER rtorrent
+
+RUN <<EOT 
+mkdir -p ~/.irssi/scripts/autorun
+cd ~/.irssi/scripts
+curl -sL http://git.io/vlcND | grep -Po '(?<="browser_download_url": ")(.*-v[\d.]+.zip)' | xargs wget --quiet -O autodl-irssi.zip
+unzip -o autodl-irssi.zip
+rm autodl-irssi.zip
+cp autodl-irssi.pl autorun/
+mkdir -p ~/.autodl
+touch ~/.autodl/autodl.cfg
+cd ~/.autodl
+rm -f autodl2.cfg
+echo 'load perl' >> ~/.irssi/startup
+
+if [ -f "autodl.cfg" ]; then
+  if (grep -sq gui-server-port autodl.cfg) && (grep -sq gui-server-password autodl.cfg); then
+    sed -i "/gui-server-port/ c\gui-server-port = 36001" autodl.cfg
+    sed -i "/gui-server-password/ c\gui-server-password = 123456789" autodl.cfg
+  else
+    sed -i '/gui-server-port/ d' autodl.cfg
+    sed -i '/gui-server-password/ d' autodl.cfg
+    echo >> autodl.cfg
+    sed -i "1s/^/[options]\ngui-server-port = 36001\ngui-server-password = 123456789\n/" autodl.cfg
+  fi
+else
+  echo "[options]" > autodl.cfg
+  echo "gui-server-port = 36001" >> autodl.cfg
+  echo "gui-server-password = 123456789" >> autodl.cfg
+fi
+EOT
+
+USER root
 
 COPY rootfs /
 

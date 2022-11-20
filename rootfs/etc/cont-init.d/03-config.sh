@@ -363,6 +363,16 @@ else
   echo "  WARNING: geoip2 plugin does not exist"
 fi
 
+echo "Symlinking autodl autodl.cfg file..."
+if [ ! -f /data/autodl/autodl.cfg ]; then
+  mv /home/rtorrent/.autodl/autodl.cfg /data/autodl/autodl.cfg
+  ln -sf /data/autodl/autodl.cfg /home/rtorrent/.autodl/autodl.cfg
+else
+  rm /home/rtorrent/.autodl/autodl.cfg
+  ln -sf /data/autodl/autodl.cfg /home/rtorrent/.autodl/autodl.cfg
+fi
+chown rtorrent. /data/autodl/autodl.cfg
+
 echo "Fixing perms..."
 chown rtorrent. \
   /data/rutorrent/share/users \
