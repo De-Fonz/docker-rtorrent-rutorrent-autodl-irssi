@@ -273,20 +273,14 @@ RUN apk --update --no-cache add \
     dhclient \
     ffmpeg \
     findutils \
-    gcc \
     geoip \
     grep \
     gzip \
     libstdc++ \
-    make \
     mediainfo \
-    musl-dev \
     ncurses \
     openssl \
     pcre \
-    perl-app-cpanminus \
-    perl-net-ssleay \
-    perl-dev \
     php7 \
     php7-bcmath \
     php7-cli \
@@ -311,7 +305,6 @@ RUN apk --update --no-cache add \
     tzdata \
     unzip \
     util-linux \
-    wget \
     zip \
     zlib \
   && ln -s /usr/lib/nginx/modules /etc/nginx/modules \
@@ -324,9 +317,23 @@ RUN apk --update --no-cache add \
   && curl --version \
   && rm -rf /tmp/*
 
-RUN cpanm -v Archive::Zip HTML::Entities XML::LibXML Digest::SHA JSON JSON::XS
+#Additional packages required for autodl-irssi
 
-RUN apk --update --no-cache add irssi-perl screen sudo
+RUN apk --update --no-cache add \
+    gcc \
+    git \
+    irssi-perl \
+    make \
+    musl-dev \
+    perl-app-cpanminus \
+    perl-net-ssleay \
+    perl-dev \
+    screen \
+    sudo \
+    wget
+
+
+RUN cpanm Archive::Zip HTML::Entities XML::LibXML Digest::SHA JSON JSON::XS
 
 RUN chmod 777 home
 
@@ -363,6 +370,30 @@ fi
 EOT
 
 USER root
+
+RUN <<EOT
+mkdir /var/www/rutorrent/plugins/autodl-rutorrent
+cd /var/www/rutorrent/plugins/autodl-rutorrent
+git clone https://github.com/autodl-community/autodl-rutorrent.git .
+rm -rf .git*
+rm -f _conf.php
+touch conf.php
+echo "<?php" >>conf.php
+echo '$autodlPort = 36001;' >> conf.php
+echo '$autodlPassword = "123456789";' >> conf.php
+cd /var/www/rutorrent/plugins
+chown -R nobody.nogroup autodl-rutorrent
+EOT
+
+#remove unused packages
+RUN apk --update --no-cache del \
+    gcc \
+    git \
+    make \
+    musl-dev \
+    perl-app-cpanminus \
+    perl-dev \
+    wget
 
 COPY rootfs /
 
