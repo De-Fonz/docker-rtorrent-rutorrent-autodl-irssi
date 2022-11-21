@@ -81,7 +81,7 @@ docker buildx bake image-all
 
 | Registry                                                                                                      | Image                                   |
 |---------------------------------------------------------------------------------------------------------------|-----------------------------------------|
-| [Docker Hub](https://hub.docker.com/r/defonz/rtorrent-rutorrent-autodl-irssi/)                                | `defonz/rtorrent-rutorrent-autodl-irssi'|
+| [Docker Hub](https://hub.docker.com/r/defonz/rtorrent-rutorrent-autodl-irssi/)                                | `defonz/rtorrent-rutorrent-autodl-irssi`|
 | [GitHub Container Registry](https://github.com/users/crazy-max/packages/container/package/rtorrent-rutorrent) | `ghcr.io/crazy-max/rtorrent-rutorrent`  |
 
 Following platforms for this image are available:
