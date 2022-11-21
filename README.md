@@ -11,10 +11,9 @@
 [rTorrent](https://github.com/rakshasa/rtorrent) and [ruTorrent](https://github.com/Novik/ruTorrent) Docker image based on Alpine Linux.<br />
 Based on the great work done by crazy-max!
 This image is still work in progress. I have managed to get a working container based on the rtorrent-rutorrent container from crazy-max, irssi and the autodl plugin. Steps to do:
-1. get all the changes from the local environment to github
-2. get the docker container onto docker hub
-3. further improve the setup
-4. updates to the readme file
+1. test if additional ports have to be added for IRSSI
+2. further improve the setup
+3. updates to the readme file
 
 ___
 
