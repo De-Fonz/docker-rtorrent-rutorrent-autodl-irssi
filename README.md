@@ -12,6 +12,7 @@
 Based on the great work done by crazy-max!
 This image is still work in progress. I have managed to get a working container based on the rtorrent-rutorrent container from crazy-max, irssi and the autodl plugin. Steps to do:
 1. test if additional ports have to be added for IRSSI
+   - tested and it seems working.
 2. further improve the setup
 3. updates to the readme file
 
