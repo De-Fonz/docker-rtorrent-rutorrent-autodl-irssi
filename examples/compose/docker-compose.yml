@@ -10,7 +10,7 @@ services:
     restart: always
 
   rtorrent-rutorrent:
-    image: crazymax/rtorrent-rutorrent:latest
+    image: crazymax/rtorrent-rutorrent-autodl-irssi:latest
     expose:
       - "${RT_DHT_PORT}/udp"
       - "${XMLRPC_PORT}"
