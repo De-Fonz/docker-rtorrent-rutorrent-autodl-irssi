@@ -55,3 +55,13 @@ passwd/rpc.htpasswd
 passwd/rutorrent.htpasswd
 passwd/webdav.htpasswd
 data/rtorrent/.session/rtorrent.lock
+data/rutorrent/share/settings/autotools.dat
+data/rutorrent/share/settings/cookies.dat
+data/rutorrent/share/settings/history_data.dat
+data/rutorrent/share/settings/trackers/tleechreload.org.ico
+data/rutorrent/share/settings/trackers/torrentleech.org.ico
+data/rutorrent/share/settings/trafic/trackers/tleechreload.org.csv
+data/rutorrent/share/settings/trafic/trackers/torrentleech.org.csv
+data/rutorrent/share/users/rtorrent/settings/history_data.dat
+data/rutorrent/share/users/rtorrent/settings/trafic/trackers/tleechreload.org.csv
+data/rutorrent/share/users/rtorrent/settings/trafic/trackers/torrentleech.org.csv

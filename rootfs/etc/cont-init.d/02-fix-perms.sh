@@ -5,6 +5,7 @@ echo "Fixing perms..."
 mkdir -p /data/rtorrent \
   /data/rutorrent \
   /data/autodl \
+  /data/watch \
   /downloads \
   /passwd \
   /etc/nginx/conf.d \
@@ -19,6 +20,7 @@ chown rtorrent. \
   /data/rtorrent \
   /data/rutorrent \
   /data/autodl \
+  /data/watch \
   /downloads
 chown -R rtorrent. \
   /etc/rtorrent \

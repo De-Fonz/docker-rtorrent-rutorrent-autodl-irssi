@@ -373,6 +373,10 @@ else
 fi
 chown rtorrent. /data/autodl/autodl.cfg
 
+echo "Symlinking watch folder"
+ln -s /data/watch /home/rtorrent/watch
+chown rtorrent. /data/watch
+
 echo "Fixing perms..."
 chown rtorrent. \
   /data/rutorrent/share/users \

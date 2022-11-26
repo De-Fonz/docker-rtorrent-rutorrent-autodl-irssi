@@ -347,6 +347,7 @@ unzip -o autodl-irssi.zip
 rm autodl-irssi.zip
 cp autodl-irssi.pl autorun/
 mkdir -p ~/.autodl
+mkdir -p ~/watch
 touch ~/.autodl/autodl.cfg
 cd ~/.autodl
 rm -f autodl2.cfg
