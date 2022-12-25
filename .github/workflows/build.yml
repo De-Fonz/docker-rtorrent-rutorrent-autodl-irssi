@@ -21,8 +21,8 @@ on:
       - '**.md'
 
 env:
-  DOCKERHUB_SLUG: crazymax/rtorrent-rutorrent
-  GHCR_SLUG: ghcr.io/crazy-max/rtorrent-rutorrent
+  DOCKERHUB_SLUG: defonz/rtorrent-rutorrent
+  GHCR_SLUG: ghcr.io/de-fonz/rtorrent-rutorrent-autodl-irssi
 
 jobs:
   build:
