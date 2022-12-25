@@ -21,7 +21,7 @@ on:
       - '**.md'
 
 env:
-  DOCKERHUB_SLUG: defonz/rtorrent-rutorrent
+  DOCKERHUB_SLUG: defonz/rtorrent-rutorrent-autodl-irssi
   GHCR_SLUG: ghcr.io/de-fonz/rtorrent-rutorrent-autodl-irssi
 
 jobs:
@@ -44,9 +44,9 @@ jobs:
             type=ref,event=pr
             type=edge
           labels: |
-            org.opencontainers.image.title=rTorrent and ruTorrent
-            org.opencontainers.image.description=rTorrent and ruTorrent
-            org.opencontainers.image.vendor=CrazyMax
+            org.opencontainers.image.title=rTorrent, ruTorrent, Autodl and Irssi
+            org.opencontainers.image.description=rTorrent, ruTorrent, Autodl and Irssi
+            org.opencontainers.image.vendor=DeFonz
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
